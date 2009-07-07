@@ -1,11 +1,6 @@
 <?
-
-define("NEWS","xml_news_heb");
-if(!mysql_connect("localhost", "xml_news_heb", "baraban")){
-    echo "<b>Ошибка подключения к MySQL</b>" . NEWS;
-    exit;
-}
-?>
+    include_once "db.php";
+    ?>
     <div class="rounded-box-3"><b class="r3"></b><b class="r1"></b><b class="r1"></b>
     <div class="inner-box"><strong>זמינים חדשות</strong>
     <div class="inner-box2">
@@ -16,7 +11,7 @@ if(!mysql_connect("localhost", "xml_news_heb", "baraban")){
 
 
   $sql = "SELECT * FROM tbl_types limit 12";
-  $q = mysql(NEWS,$sql);
+  $q = mysql_query($sql);
   $z = mysql_numrows($q);
     for($i=0;$i<$z;$i++){
     $f = mysql_fetch_array($q);
@@ -35,7 +30,7 @@ if(!mysql_connect("localhost", "xml_news_heb", "baraban")){
 
 
   $sql = "SELECT * FROM tblsites limit 15";
-  $q = mysql(NEWS,$sql);
+  $q = mysql_query($sql);
   $z = mysql_numrows($q);
     for($i=0;$i<$z;$i++){
     $f = mysql_fetch_array($q);

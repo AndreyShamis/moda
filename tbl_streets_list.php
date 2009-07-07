@@ -4,7 +4,7 @@ require_once "ajax_win_settings.php";
 mysql_query("SET character_set_results=utf8");
 $city_id = $_GET[city_id];
 $sql = "SELECT * FROM streetlist where ID_CITY='$city_id' order by STREET";
-$q = mysql(DBName,$sql);
+$q = mysql_query($sql);
 $z = mysql_numrows($q);
 if($z == 0){
     ?><input type="text" name="street" />

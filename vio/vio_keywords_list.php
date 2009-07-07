@@ -6,7 +6,7 @@
 
 
   $sql = "SELECT * FROM tbl_vio_keywords order by id_found DESC limit 10";
-  $q = mysql(DBName,$sql);
+  $q = mysql_query($sql);
   $z = mysql_numrows($q);
     for($i=0;$i<$z;$i++){
     $f = mysql_fetch_array($q);

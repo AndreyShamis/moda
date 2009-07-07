@@ -8,7 +8,7 @@
     if(!empty($user_nick) and !empty($user_pass)){
     $sql = "INSERT INTO tblusers(id_name,id_pass,id_fname,id_lname,id_mail,id_pol) VALUES
     ('".$user_nick."','".$pass_md5."','".$user_name."','".$user_fam."','".$user_mail."','".$_POST[min]."')";
-        mysql(DBName,$sql);
+        mysql_query($sql);
         if(mysql_errno() != 0){
             echo mysql_error();
         }

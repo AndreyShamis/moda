@@ -27,7 +27,7 @@ $user = new auth();
             $lang       = $_SERVER[HTTP_ACCEPT_LANGUAGE];
     $sql = "INSERT INTO tblvisitors (ip,bot_name,time,refer,get,lang) VALUES
     ('$ip','".DetectBot()."','".time()."','$ref','$get','$lang')";
-    @mysql(DBName,$sql);
+    @mysql_query($sql);
 
 
 
@@ -113,7 +113,7 @@ foreach($act_search as $val){
 
 
 $sql = "INSERT INTO  `moda`.`tbl_statist` (id_get,id_act,id_time_run,id_time) VALUES ('$get','$act','$time','".time()."') ";
-@mysql(DBName,$sql);
+@mysql_query($sql);
 ?>
 </body>
 </html>

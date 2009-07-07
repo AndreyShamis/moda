@@ -33,7 +33,7 @@ mysql_query("SET character_set_results=utf8");
     <select name="nadlan_type" size="1" class="selecet_nadlan">
   <?
   $sql = "SELECT * FROM tbl_nadlan_type";
-  $q = mysql(DBName,$sql);
+  $q = mysql_query($sql);
   $z = mysql_numrows($q);
     for($i=0;$i<$z;$i++){
     $f = mysql_fetch_array($q);
@@ -59,12 +59,12 @@ mysql_query("SET character_set_results=utf8");
     <td>אזור </td>
     <td><select name="city" class="selecet_nadlan" onchange="javascript: get('tbl_city_list.php?area_id=' + this.value,'city_win');">   <?
   $sql = "SELECT * FROM tblarea order by id_count desc";
-  $q = mysql(DBName,$sql);
+  $q = mysql_query($sql);
   $z = mysql_numrows($q);
     for($i=0;$i<$z;$i++){
     $f = mysql_fetch_array($q);
     ///$sql = "INSERT INTO tblarea (id_value) values('$f[area]')";
-    //mysql(DBName,$sql);
+    //mysql_query($sql);
     ?>
     <option value="<?=$f[id_value]?>"><?=$f[id_name]?> (<?=$f[id_value]?>)</option>
     <? } ?></select></td>

@@ -1,14 +1,9 @@
 <?
-
-define("NEWS","xml_news_heb");
-if(!mysql_connect("localhost", "xml_news_heb", "baraban")){
-    echo "<b>Ошибка подключения к MySQL</b>" . NEWS;
-    exit;
-}
+    include_once "db.php";
 
         $sql = "SELECT * FROM tbl_types";
 
-        $q = mysql(NEWS,$sql);
+        $q = mysql_query($sql);
         $z = mysql_numrows($q);
         for($i=0;$i<$z;$i++){
             $f = mysql_fetch_array($q);
@@ -17,7 +12,7 @@ if(!mysql_connect("localhost", "xml_news_heb", "baraban")){
 
         $sql = "SELECT * FROM tblsites";
 
-        $q = mysql(NEWS,$sql);
+        $q = mysql_query($sql);
         $z = mysql_numrows($q);
         for($i=0;$i<$z;$i++){
             $f = mysql_fetch_array($q);
@@ -55,7 +50,7 @@ function Parse_Date($str){
       <?
         $sql = "SELECT * FROM news order by id desc LIMIT 250";
 
-        //$q = mysql(NEWS,$sql);
+        //$q = mysql_query($sql);
         $z = mysql_numrows($q);
         for($i=0;$i<$z;$i++){
             $f = mysql_fetch_array($q);
@@ -94,7 +89,7 @@ function Parse_Date($str){
       <?
         $sql = "SELECT * FROM news order by id desc  LIMIT 50";
 
-        $q = mysql(NEWS,$sql);
+        $q = mysql_query($sql);
         $z = mysql_numrows($q);
 
         $need = $z / 2;

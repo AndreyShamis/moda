@@ -16,7 +16,7 @@ header("Cache-Control: post-check=0, pre-check=0", false);
             $lang       = $_SERVER[HTTP_ACCEPT_LANGUAGE];
     $sql = "INSERT INTO tblvisitors (ip,bot_name,time,refer,get,lang) VALUES
     ('$ip','".DetectBot()."','".time()."','$ref','$get','$lang')";
-    @mysql(DBName,$sql);
+    @mysql_query($sql);
     /*include "class_auth.php";
     $user = new auth();
     // Call to login

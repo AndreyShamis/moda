@@ -5,7 +5,7 @@
 
 
  $sql = "SELECT * FROM tbl_vio_keywords";
- $q = mysql(DBName,$sql);
+ $q = mysql_query($sql);
  $z = mysql_numrows($q);
  if(mysql_errno() != 0){
     write_log("Keywords CHECK",mysql_error() . "\n<br />" . $sql . "\n<br />");
@@ -22,10 +22,10 @@
             lower(id_key1) =lower('$keyword_found') or
             lower(id_key2) =lower('$keyword_found') or
             lower(id_key3) =lower('$keyword_found') ";
-            $questions = mysql(DBName,$sql);
+            $questions = mysql_query($sql);
             $z_found = mysql_numrows($questions);
             $sql = "UPDATE tbl_vio_keywords SET id_found='$z_found' WHERE id='".$f[id]."' LIMIT 1";
-            mysql(DBName,$sql);
+            mysql_query($sql);
         if(mysql_errno() != 0){
             write_log("Keywords CHECK" ,mysql_error() . "\n<br />" . $sql . "\n<br />");
         }

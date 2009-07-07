@@ -9,7 +9,7 @@ require_once "../ajax_win_settings.php";
 $qid = $_GET[qid];
     $sql = "SELECT * FROM tblanswers where id_question='$qid'";
 
-    $q = mysql(DBName,$sql);
+    $q = mysql_query($sql);
     $z = mysql_numrows($q);
     for($i=0;$i<$z;$i++){
     $f = mysql_fetch_array($q);
