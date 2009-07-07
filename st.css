@@ -1,0 +1,215 @@
+
+
+
+.text_btn{
+    font-family:        Tahoma;
+	font-size:          10px;
+    font-weight:        bold;
+
+	background-color:   #33CCFF;
+	border:             1px solid white;
+	height:             16px;
+	cursor:             pointer;
+	color:              #FFFFFF;
+	border-left:        1px solid #000000;
+}
+
+.asn{
+    text-decoration:    underline;
+    color:              #33A6EF ;
+    padding:            2px;
+    font-size:          14px;
+    font-family:        "Times New Roman";
+    letter-spacing:     1px;
+}
+
+
+
+
+
+
+
+.div3{
+    border: 1px solid #A2B9D5;
+    background-color: #D3E1EB;
+    color: black;
+    font-size: 14px;
+}
+.tbl_glav{
+    background-color: #B7C0B6;
+}
+.tbl_regul {
+    background-color: #D6DDD5;
+}
+.tab{
+    padding-top: 4px;
+}
+.menutitle
+{
+	padding-left:1px;
+	font-weight:bold;
+    color: #F09315;
+    text-decoration: none;
+}
+.submenu
+{
+	cursor:pointer;
+	padding-left: 3px;
+}
+pre {
+	padding: 1em;
+	border: 1px dashed #2f6fab;
+	color: black;
+	background-color: #f9f9f9;
+	line-height: 1.1em;
+
+}
+
+
+
+.menu_objects{
+  min-width: 400px;
+}
+
+
+
+.tr_main:hover{
+  background-color: #FFFFff;
+}
+tr:hover{
+  background-color: #FFFFCC;
+}
+
+h1, h2, h3, h4, h5, h6 {
+	color: black;
+	background: none;
+	font-weight: normal;
+	margin: 0;
+	padding-top: .5em;
+	padding-bottom: .17em;
+	border-bottom: 1px solid #aaa;
+}
+
+h1 { font-size: 188%; }
+
+h2 { font-size: 150%; }
+
+h3, h4, h5, h6 {
+	border-bottom: none;
+	font-weight: bold;
+}
+h3 { font-size: 132%; }
+
+h4 { font-size: 116%; }
+
+h5 { font-size: 100%; }
+
+h6 { font-size: 80%;  }
+
+
+ h1, h2, h3, h4, h5, h6 {
+	font-weight: bold;
+}
+
+table {
+	font-size: 100%;
+	color: black;
+	/* we don't want the bottom borders of <h2>s to be visible through
+	   floated tables */
+	background-color: white;
+}
+fieldset table {
+	/* but keep table layouts in forms clean... */
+	background: none;
+}
+a:visited {
+	color: #5a3696;
+}
+a:active {
+	color: #faa700;
+}
+a:hover {
+	text-decoration: underline;
+}
+a.stub {
+	color: #772233;
+}
+
+img {
+	border: none;
+	vertical-align: middle;
+}
+p {
+	margin: .4em 0 .5em 0;
+	line-height: 1.5em;
+}
+p img {
+	margin: 0;
+}
+
+hr {
+	height: 1px;
+	color: #aaa;
+	/*background-color: #aaa;  */
+	border: 0;
+	margin: .2em 0 .2em 0;
+}
+
+ul {
+	line-height: 1.5em;
+	list-style-type: square;
+	margin: .3em 0 0 1.5em;
+	padding: 0;
+	list-style-image: url(bullet.gif);
+}
+ol {
+	line-height: 1.5em;
+	margin: .3em 0 0 3.2em;
+	padding: 0;
+	list-style-image: none;
+}
+li {
+	margin-bottom: .1em;
+}
+dt {
+	font-weight: bold;
+	margin-bottom: .1em;
+}
+dl {
+	margin-top: .2em;
+	margin-bottom: .5em;
+}
+dd {
+	line-height: 1.5em;
+	margin-left: 2em;
+	margin-bottom: .1em;
+}
+
+
+.selecet_nadlan{
+  width: 200px;
+  text-align: right;
+  float: right;
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

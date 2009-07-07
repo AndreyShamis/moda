@@ -1,0 +1,280 @@
+BODY {
+    font-size:          16px;
+    font-family:        "Times New Roman";
+    background:         White;
+    color:              Black;
+    margin:             0px 100px 0px 50px;
+    padding:            0;
+
+    white-space: 800px;
+
+}
+
+table{
+  background-color: white;
+
+}
+
+a{
+    text-decoration:    none;
+    color:              #33A6EF ;
+    font:               16px Arial ;
+}
+a:hover{
+    text-decoration:    underline;
+    color:              #009900;
+}
+textarea{ width:99%; }
+.vertical_ads{text-align: center;}
+
+.r1, .r2, .r3 {
+display:block;
+height:1px;}
+.r3 { margin: 0 3px; }
+.r2 { margin: 0 2px; }
+.r1 { margin: 0 1px; }
+.rounded-box-3 .inner-box, .rounded-box-3 b {
+background-color:   #C3D9FF;
+}
+.inner-box {
+padding-left:       6px;
+padding-right:      6px;
+color:              #1116EF;
+font:               bold 12px Tahoma;
+}
+.inner-box2 {
+background-color:   #F2F6FF;
+color:              black;
+font:               12px Tahoma;
+padding-left:       4px;
+padding-right:      4px;
+}
+.r1, .r2, .r3 {
+/* IE */
+overflow:           hidden;
+font-size:          1px;
+}
+
+
+
+
+/* ANSWER COTAINER */
+.page_button{
+width: 25px;
+height:16px;
+border:1px solid #99CCCC;
+display: inline-table;
+text-align: center;
+margin: 8px;
+font-size: 11px;
+font-family: Arial;
+padding: 2px;
+}
+.page_button:hover{
+border:1px solid #442CCC;
+font-family: Arial;
+background-color: #EEFFCC;
+font-weight: bold;
+cursor: pointer;
+}
+.star{
+display: block;
+line-height: 9px;
+height: 9px;
+padding-left: 50px;
+}
+.question_open{
+background: transparent url('media/question.gif') no-repeat top left;
+display: block;
+height: 15px;
+padding-left: 18px;
+}
+.question_closed{
+background: transparent url('media/ok2.gif') no-repeat top left;
+display: block;
+height: 15px;
+padding-left: 18px;
+}
+.question_problem{
+background: transparent url('media/problem1.gif') no-repeat top left;
+display: block;
+height: 15px;
+padding-left: 18px;
+}
+
+.keywords{
+font-size:          16px;
+font-weight: bold;
+font-family:        "Tahoma";
+letter-spacing:     2px;
+padding-right: 30px;
+color: #FF9933;
+}
+
+.curlycontainer{
+border: 1px solid #b8b8b8;
+margin-bottom: 1em;
+width: 100%;
+background-color: #FFFFFF;
+}
+
+.curlycontainer .innerdiv{
+background: transparent url(media/brcorner.gif) bottom right no-repeat;
+position: relative;
+left: 2px;
+top: 2px;
+font-family: "Tahoma";
+word-spacing: 2px;
+font-size: 14px;
+padding: 1px 4px 15px 5px;
+}
+
+
+/* buttons */
+.buttonwrapper{
+overflow: hidden;
+width: 100%;
+}
+/* MENU TOP  */
+.menu_links{
+  cursor:pointer;
+  width: 120px;
+  position:absolute;
+  display: table-row;
+  border: 1px solid;
+  font-size: 18px;
+  top: 40px;
+  color: #111111;
+  text-align: center;
+}
+.menu_links:hover{
+  cursor:pointer;
+  width: 122px;
+  border: 0px solid;
+  top: 40px;
+  background-color: #C7D9FF;
+}
+/* COLOR */
+a.ovalbutton{
+background: transparent url('media/oval-blue-left.gif') no-repeat top left;
+display: block;
+font: normal 13px Tahoma;
+line-height: 16px;
+height: 24px;
+padding-left: 11px;
+text-decoration: none;}
+a:link.ovalbutton, a:visited.ovalbutton, a:active.ovalbutton{
+color: #494949;
+}
+a.ovalbutton span{
+background: transparent url('media/oval-blue-right.gif') no-repeat top right;
+display: block;
+padding: 4px 11px 4px 0;
+}
+a.ovalbutton:hover{
+background-position: bottom left;
+}
+a.ovalbutton:hover span{
+background-position: bottom right;
+color: black;
+}
+/* GRAY */
+a.ovalbutton_gray{
+background: transparent url('media/oval-gray-left.gif') no-repeat top left;
+display: block;
+font: normal 13px Tahoma;
+line-height: 16px;
+height: 24px;
+padding-left: 11px;
+text-decoration: none;
+}
+a:link.ovalbutton_gray, a:visited.ovalbutton_gray, a:active.ovalbutton_gray{
+color: #494949;
+}
+a.ovalbutton_gray span{
+background: transparent url('media/oval-gray-right.gif') no-repeat top right;
+display: block;
+padding: 4px 11px 4px 0;
+}
+a.ovalbutton_gray:hover{
+background-position: bottom left;
+}
+a.ovalbutton_gray:hover span{
+background-position: bottom right;
+color: black;
+}
+/* RED */
+a.ovalbutton_red{
+background: transparent url('media/oval-red-left.gif') no-repeat top left;
+display: block;
+font: normal 13px Tahoma;
+line-height: 16px;
+height: 24px;
+padding-left: 11px;
+text-decoration: none;
+}
+a:link.ovalbutton_red, a:visited.ovalbutton_red, a:active.ovalbutton_red{
+color: #494949;
+}
+a.ovalbutton_red span{
+background: transparent url('media/oval-red-right.gif') no-repeat top right;
+display: block;
+padding: 4px 11px 4px 0;
+}
+a.ovalbutton_red:hover{
+background-position: bottom left;
+}
+a.ovalbutton_red:hover span{
+background-position: bottom right;
+color: black;
+}
+/* GREEN */
+a.ovalbutton_green{
+background: transparent url('media/oval-green-left.gif') no-repeat top left;
+display: block;
+font: normal 13px Tahoma;
+line-height: 16px;
+height: 24px;
+padding-left: 11px;
+text-decoration: none;
+}
+a:link.ovalbutton_green, a:visited.ovalbutton_green, a:active.ovalbutton_green{
+color: #494949;
+}
+a.ovalbutton_green span{
+background: transparent url('media/oval-green-right.gif') no-repeat top right;
+display: block;
+padding: 4px 11px 4px 0;
+}
+a.ovalbutton_green:hover{
+background-position: bottom left;
+}
+a.ovalbutton_green:hover span{
+background-position: bottom right;
+color: black;
+}
+/* ORANGE */
+a.ovalbutton_orange{
+background: transparent url('media/oval-orange-left.gif') no-repeat top left;
+display: block;
+font: normal 13px Tahoma;
+line-height: 16px;
+height: 24px;
+padding-left: 11px;
+text-decoration: none;
+}
+a:link.ovalbutton_orange, a:visited.ovalbutton_orange, a:active.ovalbutton_orange{
+color: #494949;
+}
+a.ovalbutton_orange span{
+background: transparent url('media/oval-orange-right.gif') no-repeat top right;
+display: block;
+padding: 4px 11px 4px 0;
+}
+a.ovalbutton_orange:hover{
+background-position: bottom left;
+}
+a.ovalbutton_orange:hover span{
+background-position: bottom right;
+color: black;
+}
