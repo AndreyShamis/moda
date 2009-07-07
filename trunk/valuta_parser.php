@@ -159,18 +159,18 @@ class valuta{
 
   //$sql = "INSERT INTO tblvaluta (id_name,id_edenic,id_kratko,id_country)VALUES
  // ('" . $this->name . "','" . $this->edenic . "','" . $this->vlt . "','" . $this->strana . "')";
- // mysql(DBName,$sql);
+ // mysql_query($sql);
  // $date =  date("Ymd");
  // $date_korotko = $date . $this->vlt;
  // $sql = "INSERT INTO tblvaluta_history(id_date,id_kratko,id_price,id_change,id_date_korotko)VALUES
  // ('" . $date. "','" . $this->vlt . "','" . $this->price . "','" . $this->change . "', '" . $date_korotko . "')";
- // mysql(DBName,$sql);
+ // mysql_query($sql);
 
    $date =  $this->taarih;
   $date_korotko = $date . $this->vlt;
   $sql = "INSERT INTO tblvaluta_history(id_date,id_kratko,id_price,id_change,id_date_korotko)VALUES
   ('" . $date. "','" . $this->vlt . "','" . $this->price . "','" . $this->change . "', '" . $date_korotko . "')";
-  mysql(DBName,$sql);
+  mysql_query($sql);
  //$log .=  " mysql_error();
 
  $sql = "UPDATE tblvaluta
@@ -180,7 +180,7 @@ class valuta{
      id_time='" . time() . "'
  WHERE
     id_kratko='" . $this->vlt . "'" ;
-  mysql(DBName,$sql);
+  mysql_query($sql);
   if(mysql_errno() != 0 ){
     $log .=  mysql_error() . $sql . "<br />\n";
     $num_err += 1;
@@ -247,7 +247,7 @@ foreach($massiv as $param){
 $log .= "<br />\n"  ;
 }
     $sql = "INSERT into tbllog (id_log,id_script,id_errors,id_time) VALUES ('$log', 'valuta parse','" . (int)($num_err) . "','" . time() . "')";
-    mysql(DBName,$sql);
+    mysql_query($sql);
     //echo mysql_error();
     //echo $log;
     }

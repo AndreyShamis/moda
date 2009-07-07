@@ -1,15 +1,11 @@
 <?
 
 
-define("NEWS","xml_news_heb");
-if(!mysql_connect("localhost", "xml_news_heb", "baraban")){
-    //echo "<b>Ошибка подключения к MySQL</b>" . NEWS;
-    //exit;
-}
+    include_once "db.php";  
 //header('Content-Type: text/html; charset=utf-8');
 
     $sql = "Select * from tblrss";
-    $r = mysql(NEWS,$sql);
+    $r = mysql_query($sql);
     $z=mysql_numrows($r);
     $element = 0;
     $saved = 0;  
@@ -38,7 +34,7 @@ if(!mysql_connect("localhost", "xml_news_heb", "baraban")){
             id_lang     = '".$doc->getElementsByTagName('language')->item(0)->nodeValue."',
             ttl         = '".$doc->getElementsByTagName('ttl')->item(0)->nodeValue."'
             WHERE id= '$id'";
-            @mysql(NEWS,$sql);
+            @mysql_query($sql);
             if(mysql_errno() != 0 ){
                 write_log("News Parser Error",mysql_error() . "<br /> $sql \n<br />" . mysql_errno() . "<br />");
             }
@@ -69,7 +65,7 @@ if(!mysql_connect("localhost", "xml_news_heb", "baraban")){
             '". $id ."',
             '". md5($val[link]) ."',
             '". $id_type ."')";
-            mysql(NEWS,$sql);
+            mysql_query($sql);
             if(mysql_errno() != 0 and mysql_errno() != 1062){
             write_log("News Parser Error",mysql_error() . "<br /> $id_site - $id :" . mysql_errno() . "<br />");
 

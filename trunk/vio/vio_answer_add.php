@@ -7,14 +7,14 @@ require_once "../ajax_win_settings.php";
        (id_question,id_user,id_time,id_rating,id_answer)
        VALUES
        ('$question_id','".$user->id."','" . time() . "', '1', '" . $answer_text . "')";
-       mysql(DBName,$sql);
+       mysql_query($sql);
        //echo mysql_error();
        $sql = "SELECT id_answers FROM tblquestions WHERE id='$question_id' limit 1";
-       $q = mysql(DBName,$sql);
+       $q = mysql_query($sql);
        $f= mysql_fetch_array($q);
        $new_value = 1 + $f[id_answers];
        $sql = "UPDATE tblquestions SET id_answers='$new_value' WHERE id='$question_id'";
-       mysql(DBName,$sql);
+       mysql_query($sql);
 
        }
 

@@ -9,8 +9,9 @@
 
 <body>
 
-<?php
-echo md5("polkalol" );
+<?
+echo phpinfo();
+//echo md5("polkalol" );
 ?>
 
 </body>

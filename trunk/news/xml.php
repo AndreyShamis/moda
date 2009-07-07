@@ -1,10 +1,6 @@
 <?
 
-define("NEWS","xml_news_heb");
-if(!mysql_connect("localhost", "xml_news_heb", "baraban")){
-    echo "<b>Ошибка подключения к MySQL</b>" . NEWS;
-    exit;
-}
+    include_once "db.php";  
 
 $id =               (int)($_GET[id]);
 $act =              $_GET[act];
@@ -17,7 +13,7 @@ $id_link =        $_POST[id_link];
 
 function Get_Site_name($id){
     $sql = "Select * from tblsites WHERE id='$id' LIMIT 1";
-    $r = mysql(NEWS,$sql);
+    $r = mysql_query($sql);
     $f = mysql_fetch_array($r);
 
     return ($f[id_name]) ;
@@ -25,7 +21,7 @@ function Get_Site_name($id){
 
 function Get_Type_name($id){
     $sql = "Select * from tbl_types WHERE id='$id' LIMIT 1";
-    $r = mysql(NEWS,$sql);
+    $r = mysql_query($sql);
     $f = mysql_fetch_array($r);
 
     return ($f[id_name_heb]);
@@ -36,7 +32,7 @@ function Get_Type_name($id){
 
 if ($act == "del"){
     $sql = "DELETE FROM tblrss where id=$id";
-    $r = mysql(NEWS,$sql);
+    $r = mysql_query($sql);
         if (mysql_errno() == 0 ){
 ?>          <div class="main_tr"><strong>מחיקה של אתר אינה עובדת.<.strong></div>
             </div>
@@ -54,7 +50,7 @@ if ($act == "del"){
 
          if($act == "add"){
                 $sql = "INSERT INTO tblrss (id_site , id_type,id_link) values ('$site_id','$type_id','$id_link')";
-                $r = mysql(NEWS,$sql);
+                $r = mysql_query($sql);
                 if (mysql_errno() == 0 ){
 ?>          <div class="main_tr">Создание новой группы</div>
             <div><strong>Добавление прошло успешно.</strong>
@@ -85,7 +81,7 @@ if ($act == "del"){
     <select name="site_id">
 <?
     $sql = "Select * from tblsites";
-    $r = mysql(NEWS,$sql);
+    $r = mysql_query($sql);
     $z=mysql_numrows($r);
         for ($i=0; $i<$z; $i++){
          $f = mysql_fetch_array($r);
@@ -104,7 +100,7 @@ if ($act == "del"){
     <select name="type_id">
 <?
     $sql = "Select * from tbl_types";
-    $r = mysql(NEWS,$sql);
+    $r = mysql_query($sql);
     $z=mysql_numrows($r);
         for ($i=0; $i<$z; $i++){
          $f = mysql_fetch_array($r);
@@ -140,7 +136,7 @@ if($act == "save" and !empty($id)){
 <div class="main_tr">Приминения изминений</div>
 <?
         $sql = "UPDATE tblrss SET id_name='$desc', id_link='$new_value' where id='$id' LIMIT 1";
-        $r = mysql(NEWS,$sql);
+        $r = mysql_query($sql);
         if (mysql_errno() == 0 ){
 ?>
             <div><strong>שינוי בוצע בהצלחה</strong>
@@ -159,7 +155,7 @@ if($act == "save" and !empty($id)){
 
 if ($act == "change"){
     $sql = "Select * from tblrss where id='$id' LIMIT 1";
-    $r = mysql(NEWS,$sql);
+    $r = mysql_query($sql);
     $z=mysql_numrows($r);
     $f = mysql_fetch_array($r);
 ?>
@@ -204,7 +200,7 @@ if ($act == "change"){
   </tr>
 <?
     $sql = "Select * from tblrss";
-    $r = mysql(NEWS,$sql);
+    $r = mysql_query($sql);
     $z=mysql_numrows($r);
         for ($i=0; $i<$z; $i++){
          $f = mysql_fetch_array($r);

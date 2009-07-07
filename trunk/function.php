@@ -23,7 +23,7 @@ function DetectBot(){
 function get_name($id){
     if ($id == "" or $id==0) {return ("אורח");}
     $id= (int)($id);
-    $q=mysql(DBName,"SELECT * FROM tblusers where id='$id' limit 1");
+    $q=mysql_query("SELECT * FROM tblusers where id='$id' limit 1");
     $f=mysql_fetch_array($q);
 
 	if ($f[id_name]!=""){
@@ -56,7 +56,7 @@ function write_log($script,$log,$errors=0){
     $sql = "INSERT into tbllog
     (id_log,id_script,id_errors,id_time) VALUES
     ('$log', '".$script."','".$errors."','" . time() . "')";
-    mysql(DBName,$sql);
+    mysql_query($sql);
 }
 
 function refresh($sec,$page) {

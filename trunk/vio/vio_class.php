@@ -117,7 +117,7 @@ class vio{
         if($this->act == "key"){
             $id_keyword = (int)($_GET[id]);
             $sql = "SELECT * FROM tbl_vio_keywords WHERE id='$id_keyword' LIMIT 1";
-            $q = mysql(DBName,$sql);
+            $q = mysql_query($sql);
             $f = mysql_fetch_array($q);
             $keyword_need = $f[id_key];
             $Win_text .= " לפי מילת מפתח [ $keyword_need ] ";
@@ -152,12 +152,12 @@ class vio{
 
         $sql_count = str_replace("SELECT * FROM","SELECT count(*) FROM",$sql);
         $sql_count = preg_replace("/(ORDER BY .*)/usi", $replacement, $sql_count);;
-        $q = mysql(DBName,$sql_count);
+        $q = mysql_query($sql_count);
         $f = mysql_fetch_array($q);
         $this->Build_List_Menu($f['count(*)']);
         // Finsish  To Build Menu Block
 
-        $q = mysql(DBName,$sql);
+        $q = mysql_query($sql);
         $z = mysql_numrows($q);
 
         $templator = new templ('vio/','question_list');
@@ -205,7 +205,7 @@ class vio{
 
     $sql = "SELECT * FROM tblanswers where id_question='".$this->q_ID."'";
 
-    $q = mysql(DBName,$sql);
+    $q = mysql_query($sql);
     $z = mysql_numrows($q);
     $templator = new templ('vio/','answer_list');
     for($i=0;$i<$z;$i++){
@@ -244,7 +244,7 @@ class vio{
     $sql = "SELECT * FROM tblquestions where id='".$this->id."' LIMIT 1";
 
 
-    $q = mysql(DBName,$sql);
+    $q = mysql_query($sql);
     $z = mysql_numrows($q);
     $f = mysql_fetch_array($q);
     $this->q_Owner_ID = $f[id_user];
@@ -284,7 +284,7 @@ class vio{
     $templator->set($obj);
     $sql = "UPDATE tblquestions SET id_visited=id_visited+1 where id='".$this->id."' LIMIT 1";
 
-    $q = mysql(DBName,$sql);
+    $q = mysql_query($sql);
 
     echo $templator->Easy_Construct(1);
     $this->Build_Answer_List();
@@ -324,12 +324,12 @@ class vio{
             foreach($keywory as $val){
                 if(!empty($val)){
                     $sql = "INSERT INTO tbl_vio_keywords (id_key) values('".$val."');";
-                    mysql(DBName,$sql);
+                    mysql_query($sql);
                 }
             }
             if($found > 0){
                 $sql = "SELECT id,id_subj FROM tblquestions ORDER BY id LIMIT 1";
-                $q = mysql(DBName,$sql);
+                $q = mysql_query($sql);
 ;               $f = mysql_fetch_array($q);
                 if($f[id_subj] == $subj){
 
@@ -354,7 +354,7 @@ class vio{
                         (id_subj,id_question,id_days,id_key1,id_key2,id_key3,id_date,id_user,id_points)
                     VALUES
                         ('$subj','$quest','$days','$key1','$key2','$key3','" . time() . "', '" . (int)($this->user_id) . "','".$points."')";
-                    mysql(DBName,$sql);
+                    mysql_query($sql);
                     if(mysql_errno() == 0){
                         $this->act = "view";
                         $this->id  = mysql_insert_id();

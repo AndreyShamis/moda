@@ -22,7 +22,7 @@ class auth{
                 //echo $arr_cook[0] . "<br />";
                 //echo $arr_cook[1] . "<br />";
                     $sql = "select id,id_name from tblusers where id='". $arr_cook[1] ."' and cook='". $arr_cook[0] ."' LIMIT 1";
-                    $r=@mysql(DBName,$sql);
+                    $r=@mysql_query($sql);
                     $z = mysql_numrows($r);
                     if ($z > 0){
                         $f=mysql_fetch_array($r);
@@ -50,7 +50,7 @@ class auth{
         $kuki = $_COOKIE["moda"] ;
 
         $sql = "UPDATE tblusers SET cook='outed' where id='".$this->id."' LIMIT 1";
-        mysql(DBName,$sql);
+        mysql_query($sql);
         setcookie("moda", "", 0);
         header("location: ?");
     }

@@ -32,7 +32,7 @@ if($act == "view"){
 $r = new WikiParser() ;
     $sql = "SELECT * FROM tblquestions where id='$id' LIMIT 1";
 
-    $q = mysql(DBName,$sql);
+    $q = mysql_query($sql);
     $z = mysql_numrows($q);
     $f = mysql_fetch_array($q);
     $question_owner_id = $f[id_user];
@@ -162,7 +162,7 @@ google_ad_height = 15;
 <div id="answer_list">
 <?  $sql = "SELECT * FROM tblanswers where id_question='$f[id]'";
 
-    $q = mysql(DBName,$sql);
+    $q = mysql_query($sql);
     $z = mysql_numrows($q);
 /////////////////////////////////////////////////////////////////
 //
@@ -225,7 +225,7 @@ $Win_text = " רשימת שאלות ";
         if($act == "key"){
             $id_keyword = (int)($_GET[id]);
                 $sql = "SELECT * FROM tbl_vio_keywords WHERE id='$id_keyword' LIMIT 1";
-                $q = mysql(DBName,$sql);
+                $q = mysql_query($sql);
                 $z = mysql_numrows($q);
                 $f = mysql_fetch_array($q);
                 $keyword_need = $f[id_key];
@@ -243,7 +243,7 @@ $Win_text = " רשימת שאלות ";
 
             $sql = "SELECT * FROM tblquestions where id_status='$status_need' order by id desc ";
         }
-        $q = mysql(DBName,$sql);
+        $q = mysql_query($sql);
         $z = mysql_numrows($q);
 
         $question_found = $z;

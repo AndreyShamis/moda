@@ -8,7 +8,7 @@
 <?
 mysql_query("SET character_set_results=utf8");
   $sql = "SELECT * FROM tblcompany";
-  $q = mysql(DBName,$sql);
+  $q = mysql_query($sql);
   $z = mysql_numrows($q);
     for($i=0;$i<$z;$i++){
     $f = mysql_fetch_array($q);

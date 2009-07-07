@@ -8,7 +8,7 @@ include "function.php";
         $pass_md5 = md5($_POST[pass]);
 
         $sql = "SELECT id,id_pass,id_name FROM tblusers where lower(id_name)=lower('$ima') LIMIT 1";
-		$r=@mysql(DBName,$sql);
+		$r=@mysql_query($sql);
 		$z = mysql_numrows($r);
 		if ($z == 0) {
 		    $err .="שם משתמש לא קיים<br />\n";
@@ -23,7 +23,7 @@ include "function.php";
   			elseif (@$f[id_pass] == $pass_md5){
 				$cook = md5($ima . "lol" . $id) ;
                 $sql = "UPDATE tblusers SET cook='$cook' where id='$id' LIMIT 1";
-				@mysql(DBName,$sql);
+				@mysql_query($sql);
                 $str_cook = $cook . ":" . $id;
   				setcookie("moda", $str_cook, time()+ 60 * 60 * 60);
 			   	header("location: index.php");

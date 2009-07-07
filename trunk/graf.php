@@ -3,11 +3,11 @@ header("Content-Type: image/png");
   require_once "db.php";
   $type = $_GET[vtype];
   $sql = "SELECT id FROM tblvaluta_history where id_kratko='$type'";
-  $q = mysql(DBName,$sql);
+  $q = mysql_query($sql);
   $z = mysql_numrows($q);
   $start = $z - 40;
     $sql = "SELECT * FROM tblvaluta_history where id_kratko='$type'  limit $start, $z";
-  $q = mysql(DBName,$sql);
+  $q = mysql_query($sql);
   $z = mysql_numrows($q);
     for($i=0;$i<$z;$i++){
     $f = mysql_fetch_array($q);

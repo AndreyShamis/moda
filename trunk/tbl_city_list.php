@@ -6,7 +6,7 @@ $area_id = $_GET[area_id];
 
 $sql = "SELECT * FROM city where area='$area_id' order by NAME_CITY";
 
-$q = mysql(DBName,$sql);
+$q = mysql_query($sql);
 $z = mysql_numrows($q);
 if($z == 0){
     ?><input type="text" name="city" />

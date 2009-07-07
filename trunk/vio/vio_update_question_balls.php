@@ -4,7 +4,7 @@
 
 
     $sql = "SELECT count(*),id_question,sum(id_ball) as id_question FROM tblvio_questions_balls GROUP BY id_question";
-    $q = mysql(DBName,$sql);
+    $q = mysql_query($sql);
     $z = mysql_numrows($q);
     for($i=0;$i<$z;$i++){
         $f = mysql_fetch_array($q);
@@ -17,7 +17,7 @@
          $q_Ball = 20*round($f[2] / $f[0],3);
          //echo $q_Ball ."<br />   &nbsp;&nbsp;&nbsp;SUM:$f[2] / Count:$f[0]<br /><br />";
          $sql = "UPDATE tblquestions SET id_rating='$q_Ball' WHERE id= '".$f[1]."' LIMIT 1";
-         mysql(DBName,$sql);
+         mysql_query($sql);
     }
 
 ?>

@@ -2,7 +2,7 @@
 
 $id	= (int)(@$_GET[editid]);
     $sql = "SELECT * FROM tbl_theory WHERE id=$id limit 0,1";
- 		$q=@mysql(DBName,$sql);
+ 		$q=@mysql_query($sql);
         $z = mysql_numrows($q);
         $f = mysql_fetch_array($q);
 if(@$user->id == @$f[id_author]) {

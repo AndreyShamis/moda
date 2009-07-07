@@ -1,11 +1,5 @@
 <?
-
-define("NEWS","xml_news_heb");
-if(!mysql_connect("localhost", "xml_news_heb", "baraban")){
-    echo "<b>Ошибка подключения к MySQL</b>" . NEWS;
-    exit;
-}
-
+    include_once "db.php";  
 $id =               (int)($_GET[id]);
 $act =              $_GET[act];
 
@@ -14,7 +8,7 @@ $new_value =        $_POST[new_value];
 
 if ($act == "del"){
     $sql = "DELETE FROM tbl_types where id=$id";
-    $r = mysql(NEWS,$sql);
+    $r = mysql_query($sql);
         if (mysql_errno() == 0 ){
 ?>          <div class="main_tr"><strong>מחיקה של אתר אינה עובדת.<.strong></div>
             </div>
@@ -32,7 +26,7 @@ if ($act == "del"){
 
          if($act == "add"){
                 $sql = "INSERT INTO tbl_types (id_name_eng , id_name_heb) values ('$desc','$new_value')";
-                $r = mysql(NEWS,$sql);
+                $r = mysql_query($sql);
                 if (mysql_errno() == 0 ){
 ?>          <div class="main_tr">Создание новой группы</div>
             <div><strong>Добавление прошло успешно.</strong>
@@ -85,7 +79,7 @@ if($act == "save" and !empty($id)){
 <div class="main_tr">Приминения изминений</div>
 <?
         $sql = "UPDATE tbl_types SET id_name_eng='$desc', id_name_heb='$new_value' where id='$id' LIMIT 1";
-        $r = mysql(NEWS,$sql);
+        $r = mysql_query($sql);
         if (mysql_errno() == 0 ){
 ?>
             <div><strong>שינוי בוצע בהצלחה</strong>
@@ -104,7 +98,7 @@ if($act == "save" and !empty($id)){
 
 if ($act == "change"){
     $sql = "Select * from tbl_types where id='$id' LIMIT 1";
-    $r = mysql(NEWS,$sql);
+    $r = mysql_query($sql);
     $z=mysql_numrows($r);
     $f = mysql_fetch_array($r);
 ?>
@@ -148,7 +142,7 @@ if ($act == "change"){
   </tr>
 <?
     $sql = "Select * from tbl_types";
-    $r = mysql(NEWS,$sql);
+    $r = mysql_query($sql);
     $z=mysql_numrows($r);
         for ($i=0; $i<$z; $i++){
          $f = mysql_fetch_array($r);
